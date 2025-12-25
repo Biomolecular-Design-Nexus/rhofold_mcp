@@ -1,0 +1,48 @@
+{
+  "test_date": "2025-12-24T11:41:54.133355",
+  "server_name": "RhoFold",
+  "server_path": "src/server.py",
+  "tests": {
+    "server_startup": {
+      "status": "passed",
+      "timestamp": "2025-12-24T11:41:55.299906",
+      "output": "Server imports and initializes correctly"
+    },
+    "tool_availability": {
+      "status": "passed",
+      "timestamp": "2025-12-24T11:41:55.299934",
+      "expected": 14,
+      "found": 14
+    },
+    "examples_availability": {
+      "status": "passed",
+      "timestamp": "2025-12-24T11:41:55.300146",
+      "example_dirs": 16,
+      "fasta_files": 3
+    },
+    "job_system": {
+      "status": "passed",
+      "timestamp": "2025-12-24T11:41:55.300207",
+      "jobs_dir": "/home/xux/Desktop/NucleicMCP/NucleicMCP/tool-mcps/rhofold_mcp/jobs",
+      "existing_jobs": 0
+    },
+    "sync_tool_validate_rna_sequence": {
+      "status": "error",
+      "timestamp": "2025-12-24T11:41:55.300217",
+      "error": "'FunctionTool' object is not callable"
+    },
+    "sync_tool_get_example_data_info": {
+      "status": "error",
+      "timestamp": "2025-12-24T11:41:55.300223",
+      "error": "'FunctionTool' object is not callable"
+    }
+  },
+  "issues": [],
+  "summary": {
+    "total_tests": 6,
+    "passed": 4,
+    "failed": 2,
+    "pass_rate": "66.7%",
+    "ready_for_production": false
+  }
+}

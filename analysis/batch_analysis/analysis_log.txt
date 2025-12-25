@@ -1,0 +1,25 @@
+2025-12-24 11:07:03,850 - INFO: ======================================================================
+2025-12-24 11:07:03,850 - INFO: RhoFold+ Structure Analysis and Validation
+2025-12-24 11:07:03,850 - INFO: ======================================================================
+2025-12-24 11:07:03,850 - INFO: Scanning: output/batch_results
+2025-12-24 11:07:03,851 - INFO: Found 3 predictions
+2025-12-24 11:07:03,851 - INFO: Total predictions to analyze: 3
+2025-12-24 11:07:03,851 - INFO: Analyzing 4xw7A...
+2025-12-24 11:07:03,854 - INFO:   Structure: 64 residues, avg confidence: 0.00
+2025-12-24 11:07:03,854 - INFO:   Secondary structure: 19 base pairs
+2025-12-24 11:07:03,856 - INFO:   Results data loaded successfully
+2025-12-24 11:07:03,856 - INFO: Analyzing 5tpyA...
+2025-12-24 11:07:03,859 - INFO:   Structure: 71 residues, avg confidence: 0.00
+2025-12-24 11:07:03,859 - INFO:   Secondary structure: 26 base pairs
+2025-12-24 11:07:03,860 - INFO:   Results data loaded successfully
+2025-12-24 11:07:03,860 - INFO: Analyzing 5lysA...
+2025-12-24 11:07:03,862 - INFO:   Structure: 57 residues, avg confidence: 0.00
+2025-12-24 11:07:03,862 - INFO:   Secondary structure: 24 base pairs
+2025-12-24 11:07:03,863 - INFO:   Results data loaded successfully
+2025-12-24 11:07:03,863 - INFO: Successfully analyzed 3 predictions
+2025-12-24 11:07:03,863 - INFO: Analysis report saved: analysis/batch_analysis/analysis_report.txt
+2025-12-24 11:07:03,866 - INFO: CSV summary saved: analysis/batch_analysis/analysis_summary.csv
+2025-12-24 11:07:03,866 - INFO: ======================================================================
+2025-12-24 11:07:03,866 - INFO: Analysis completed successfully!
+2025-12-24 11:07:03,866 - INFO: Results saved in: analysis/batch_analysis
+2025-12-24 11:07:03,866 - INFO: ======================================================================

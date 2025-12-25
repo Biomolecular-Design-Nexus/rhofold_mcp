@@ -1,0 +1,48 @@
+{
+  "_description": "Default configuration for all RhoFold MCP tools",
+  "_source": "Common settings extracted from all use cases",
+
+  "global": {
+    "log_level": "INFO",
+    "device": "cpu",
+    "checkpoint_path": "./pretrained/rhofold_pretrained_params.pt",
+    "data_dir": "./examples/data",
+    "output_dir": "./output"
+  },
+
+  "model": {
+    "type": "RhoFold",
+    "huggingface_repo": "cuhkaih/rhofold",
+    "download_if_missing": true,
+    "cache_dir": "./pretrained",
+    "device_map": "auto"
+  },
+
+  "processing": {
+    "batch_size": 1,
+    "max_sequence_length": null,
+    "validate_inputs": true,
+    "continue_on_error": false
+  },
+
+  "amber_relaxation": {
+    "enabled": true,
+    "max_iterations": 1000,
+    "tolerance": 1e-3,
+    "save_trajectory": false
+  },
+
+  "output": {
+    "save_logs": true,
+    "compression": "gzip",
+    "precision": "float32",
+    "create_directories": true
+  },
+
+  "paths": {
+    "repo_path": "./repo/RhoFold",
+    "scripts_path": "./scripts",
+    "configs_path": "./configs",
+    "examples_path": "./examples"
+  }
+}

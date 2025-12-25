@@ -1,0 +1,56 @@
+{
+  "_description": "Configuration for RNA structure analysis and validation",
+  "_source": "Extracted from examples/use_case_4_structure_analysis.py",
+
+  "log_level": "INFO",
+  "export_csv": false,
+  "include_unrelaxed": false,
+
+  "file_detection": {
+    "required_files": ["unrelaxed_model.pdb"],
+    "optional_files": ["relaxed_*_model.pdb", "results.npz", "ss.ct"],
+    "recursive_search": true
+  },
+
+  "quality_analysis": {
+    "confidence_thresholds": {
+      "very_high": 90,
+      "confident": 70,
+      "low": 50
+    },
+    "calculate_statistics": true,
+    "include_per_residue_analysis": true
+  },
+
+  "pdb_analysis": {
+    "preferred_structure": "relaxed",
+    "extract_sequence": true,
+    "analyze_geometry": false,
+    "check_atom_completeness": true
+  },
+
+  "secondary_structure": {
+    "parse_ct_files": true,
+    "base_pair_threshold": 0.5,
+    "validate_pairing": true
+  },
+
+  "results_analysis": {
+    "parse_npz_files": true,
+    "analyze_distance_maps": true,
+    "extract_confidence_data": true
+  },
+
+  "output": {
+    "detailed_report": true,
+    "summary_statistics": true,
+    "export_formats": ["txt", "csv"],
+    "include_file_paths": true
+  },
+
+  "validation": {
+    "check_file_integrity": true,
+    "validate_pdb_format": false,
+    "report_missing_files": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "_description": "Configuration for RNA single sequence 3D structure prediction",
+  "_source": "Extracted from examples/use_case_1_single_sequence_prediction.py",
+
+  "device": "cpu",
+  "checkpoint_path": "./pretrained/rhofold_pretrained_params.pt",
+  "relax_steps": 1000,
+  "validate_sequence": true,
+  "log_level": "INFO",
+
+  "model": {
+    "type": "RhoFold",
+    "huggingface_repo": "cuhkaih/rhofold",
+    "download_if_missing": true
+  },
+
+  "processing": {
+    "use_msa": false,
+    "prediction_mode": "single_sequence"
+  },
+
+  "output": {
+    "save_unrelaxed": true,
+    "save_relaxed": true,
+    "save_secondary_structure": true,
+    "save_distance_maps": true,
+    "save_confidence_scores": true
+  },
+
+  "amber_relaxation": {
+    "enabled": true,
+    "max_iterations": 1000,
+    "save_trajectory": false
+  }
+}

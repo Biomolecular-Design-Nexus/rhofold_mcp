@@ -1,0 +1,54 @@
+{
+  "_description": "Configuration for batch RNA structure prediction",
+  "_source": "Extracted from examples/use_case_3_batch_prediction.py",
+
+  "device": "cpu",
+  "checkpoint_path": "./pretrained/rhofold_pretrained_params.pt",
+  "relax_steps": 1000,
+  "max_sequences": null,
+  "log_level": "INFO",
+
+  "model": {
+    "type": "RhoFold",
+    "huggingface_repo": "cuhkaih/rhofold",
+    "download_if_missing": true,
+    "load_once": true
+  },
+
+  "processing": {
+    "auto_detect_msa": true,
+    "fallback_to_single_sequence": true,
+    "parallel_processing": false,
+    "continue_on_error": true
+  },
+
+  "filtering": {
+    "include_patterns": [],
+    "exclude_patterns": [],
+    "max_sequence_length": null,
+    "min_sequence_length": 10
+  },
+
+  "output": {
+    "save_unrelaxed": true,
+    "save_relaxed": true,
+    "save_secondary_structure": true,
+    "save_distance_maps": true,
+    "save_confidence_scores": true,
+    "create_summary": true,
+    "cleanup_temp_files": true
+  },
+
+  "amber_relaxation": {
+    "enabled": true,
+    "max_iterations": 1000,
+    "save_trajectory": false,
+    "skip_on_failure": true
+  },
+
+  "batch_settings": {
+    "progress_reporting": true,
+    "save_intermediate_results": true,
+    "error_tolerance": 0.1
+  }
+}

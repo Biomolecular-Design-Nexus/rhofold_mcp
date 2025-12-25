@@ -1,0 +1,4 @@
+name,directory,length,avg_confidence,min_confidence,max_confidence,std_confidence,base_pairs,very_high_conf_percent,confident_percent,low_conf_percent,very_low_conf_percent,has_relaxed_structure,has_results_npz,has_secondary_structure
+4xw7A,output/batch_results/4xw7A,64,0.0,0.0,0.0,0.0,19,0.0,0.0,0.0,100.0,True,True,True
+5tpyA,output/batch_results/5tpyA,71,0.0,0.0,0.0,0.0,26,0.0,0.0,0.0,100.0,True,True,True
+5lysA,output/batch_results/5lysA,57,0.0,0.0,0.0,0.0,24,0.0,0.0,0.0,100.0,True,True,True

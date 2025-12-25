@@ -1,0 +1,9 @@
+{
+  "setup_commands": [
+    "(command -v mamba >/dev/null 2>&1 && mamba create -p ./env python=3.10 -y) || (command -v conda >/dev/null 2>&1 && conda create -p ./env python=3.10 -y) || (echo \"Warning: Neither mamba nor conda found, creating venv instead\" && python3 -m venv ./env)",
+    "./env/bin/pip install fastmcp loguru pandas numpy tqdm",
+    "./env/bin/pip install --ignore-installed fastmcp",
+    "(command -v mamba >/dev/null 2>&1 && mamba env create -f repo/RhoFold/envs/environment_linux.yaml -p ./env_py37) || (command -v conda >/dev/null 2>&1 && conda env create -f repo/RhoFold/envs/environment_linux.yaml -p ./env_py37)",
+    "(command -v mamba >/dev/null 2>&1 && mamba run -p ./env_py37 pip install -e repo/RhoFold/) || (command -v conda >/dev/null 2>&1 && conda run -p ./env_py37 pip install -e repo/RhoFold/)"
+  ]
+}

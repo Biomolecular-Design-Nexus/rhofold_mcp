@@ -1,0 +1,36 @@
+--- a/examples/use_case_1_single_sequence_prediction.py
++++ b/examples/use_case_1_single_sequence_prediction.py
+@@ -152,8 +152,6 @@ def main():
+
+     # Import RhoFold modules (done here to allow script to run even if RhoFold not installed)
+     try:
+-        import sys
+-        import os
+-
+         # Add repo path to Python path for imports
+         repo_path = os.path.join(os.path.dirname(__file__), '..', 'repo', 'RhoFold')
+         sys.path.insert(0, repo_path)
+--- a/examples/use_case_2_prediction_with_msa.py
++++ b/examples/use_case_2_prediction_with_msa.py
+@@ -163,8 +163,6 @@ def main():
+
+     # Import RhoFold modules (done here to allow script to run even if RhoFold not installed)
+     try:
+-        import sys
+-        import os
+-
+         # Add repo path to Python path for imports
+         repo_path = os.path.join(os.path.dirname(__file__), '..', 'repo', 'RhoFold')
+         sys.path.insert(0, repo_path)
+--- a/examples/use_case_3_batch_prediction.py
++++ b/examples/use_case_3_batch_prediction.py
+@@ -351,8 +351,6 @@ def main():
+
+     # Import RhoFold modules
+     try:
+-        import sys
+-        import os
+-
+         # Add repo path to Python path for imports
+         repo_path = os.path.join(os.path.dirname(__file__), '..', 'repo', 'RhoFold')
+         sys.path.insert(0, repo_path)

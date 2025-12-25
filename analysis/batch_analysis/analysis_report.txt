@@ -1,0 +1,78 @@
+RhoFold+ Structure Analysis Report
+==================================================
+
+Total predictions analyzed: 3
+
+Summary Table:
+--------------------------------------------------------------------------------
+Name                 Length   Avg Conf   Base Pairs   Files               
+--------------------------------------------------------------------------------
+4xw7A                64       0.00       19           unrel,rel,npz,ss    
+5tpyA                71       0.00       26           unrel,rel,npz,ss    
+5lysA                57       0.00       24           unrel,rel,npz,ss    
+
+
+Detailed Analysis: 4xw7A
+----------------------------------------
+Structure Quality:
+  Length: 64 residues
+  Average confidence: 0.00
+  Confidence range: 0.00 - 0.00
+  Standard deviation: 0.00
+  Confidence distribution:
+    Very high (≥90): 0 (0.0%)
+    Confident (70-89): 0 (0.0%)
+    Low (50-69): 0 (0.0%)
+    Very low (<50): 64 (100.0%)
+
+Secondary Structure:
+  Base pairs: 19
+  Sequence length: 64
+  Pairing density: 0.297 pairs/nucleotide
+
+Sequence: GGGUCGUGACUGGCGAACAGGUGGGAAACCACCGGGGAGCGACCCUUGCCGCCCGCCUGGGCAA
+
+Detailed Analysis: 5tpyA
+----------------------------------------
+Structure Quality:
+  Length: 71 residues
+  Average confidence: 0.00
+  Confidence range: 0.00 - 0.00
+  Standard deviation: 0.00
+  Confidence distribution:
+    Very high (≥90): 0 (0.0%)
+    Confident (70-89): 0 (0.0%)
+    Low (50-69): 0 (0.0%)
+    Very low (<50): 71 (100.0%)
+
+Secondary Structure:
+  Base pairs: 26
+  Sequence length: 71
+  Pairing density: 0.366 pairs/nucleotide
+
+Sequence: GGGUCAGGCCGGCGAAAGUCGCCACAGUUUGGGGAAAGCUGUGCAGCCUGUAACCCCCCCACGAAAGUGGG
+
+Detailed Analysis: 5lysA
+----------------------------------------
+Structure Quality:
+  Length: 57 residues
+  Average confidence: 0.00
+  Confidence range: 0.00 - 0.00
+  Standard deviation: 0.00
+  Confidence distribution:
+    Very high (≥90): 0 (0.0%)
+    Confident (70-89): 0 (0.0%)
+    Low (50-69): 0 (0.0%)
+    Very low (<50): 57 (100.0%)
+
+Secondary Structure:
+  Base pairs: 24
+  Sequence length: 57
+  Pairing density: 0.421 pairs/nucleotide
+
+Sequence: GGGAUCUGUCACCCCAUUGAUCGCCUUCGGGCUGAUCUGGCUGGCUAGGCGGGUCCC
+
+==================================================
+Overall Statistics:
+Average confidence across all predictions: 0.00 ± 0.00
+Average base pairs: 23.0 ± 2.9

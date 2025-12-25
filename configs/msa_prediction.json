@@ -1,0 +1,42 @@
+{
+  "_description": "Configuration for RNA structure prediction with Multiple Sequence Alignment",
+  "_source": "Extracted from examples/use_case_2_prediction_with_msa.py",
+
+  "device": "cpu",
+  "checkpoint_path": "./pretrained/rhofold_pretrained_params.pt",
+  "relax_steps": 1000,
+  "log_level": "INFO",
+
+  "model": {
+    "type": "RhoFold",
+    "huggingface_repo": "cuhkaih/rhofold",
+    "download_if_missing": true
+  },
+
+  "processing": {
+    "use_msa": true,
+    "prediction_mode": "msa_enhanced",
+    "validate_msa": true,
+    "msa_format": "a3m"
+  },
+
+  "output": {
+    "save_unrelaxed": true,
+    "save_relaxed": true,
+    "save_secondary_structure": true,
+    "save_distance_maps": true,
+    "save_confidence_scores": true,
+    "include_msa_info": true
+  },
+
+  "amber_relaxation": {
+    "enabled": true,
+    "max_iterations": 1000,
+    "save_trajectory": false
+  },
+
+  "quality_control": {
+    "min_confidence_threshold": 0.5,
+    "report_confidence_stats": true
+  }
+}

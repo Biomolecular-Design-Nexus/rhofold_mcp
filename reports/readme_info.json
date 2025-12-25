@@ -1,0 +1,203 @@
+{
+  "project_name": "RhoFold MCP",
+  "description": "RNA 3D structure prediction and analysis tool using RhoFold+ with MCP integration for Claude Code and other AI assistants",
+  "created_date": "2025-12-24",
+  "readme_path": "README.md",
+  "tools": [
+    {
+      "name": "predict_rna_structure",
+      "type": "sync",
+      "description": "Single sequence RNA 3D structure prediction",
+      "runtime": "~5 minutes (CPU)",
+      "example_prompt": "Use predict_rna_structure with input file @examples/data/3owzA/3owzA.fasta"
+    },
+    {
+      "name": "predict_rna_structure_with_msa",
+      "type": "sync",
+      "description": "MSA-enhanced RNA structure prediction",
+      "runtime": "~5 minutes (CPU)",
+      "example_prompt": "Run predict_rna_structure_with_msa on @examples/data/3owzA/3owzA.fasta using MSA @examples/data/3owzA/3owzA.a3m"
+    },
+    {
+      "name": "analyze_rna_structures",
+      "type": "sync",
+      "description": "Analyze and validate predicted RNA structures",
+      "runtime": "~10 seconds",
+      "example_prompt": "Analyze RNA structures in @output/batch_results and export to CSV"
+    },
+    {
+      "name": "validate_rna_sequence",
+      "type": "sync",
+      "description": "Validate RNA sequence file format",
+      "runtime": "~1 second",
+      "example_prompt": "Validate sequence file @examples/data/3owzA/3owzA.fasta"
+    },
+    {
+      "name": "get_example_data_info",
+      "type": "sync",
+      "description": "List available example datasets",
+      "runtime": "~1 second",
+      "example_prompt": "What example RNA datasets are available?"
+    },
+    {
+      "name": "submit_batch_rna_prediction",
+      "type": "submit",
+      "description": "Batch processing of multiple RNA sequences",
+      "runtime": "4+ min per sequence",
+      "example_prompt": "Submit batch RNA prediction for @examples/data/ directory with max 3 sequences"
+    },
+    {
+      "name": "submit_large_sequence_prediction",
+      "type": "submit",
+      "description": "Single sequence prediction (background)",
+      "runtime": "Variable",
+      "example_prompt": "Submit large sequence prediction for very_large_rna.fasta"
+    },
+    {
+      "name": "submit_msa_prediction",
+      "type": "submit",
+      "description": "MSA-based prediction (background)",
+      "runtime": "Variable",
+      "example_prompt": "Submit MSA prediction for large_sequence.fasta with large_msa.a3m"
+    },
+    {
+      "name": "submit_comprehensive_analysis",
+      "type": "submit",
+      "description": "Large-scale structure analysis",
+      "runtime": "Variable",
+      "example_prompt": "Submit comprehensive analysis for @results/batch_predictions"
+    }
+  ],
+  "job_management_tools": [
+    "get_job_status",
+    "get_job_result",
+    "get_job_log",
+    "cancel_job",
+    "list_jobs"
+  ],
+  "scripts": [
+    {
+      "name": "rna_single_sequence_prediction.py",
+      "description": "Single sequence RNA 3D structure prediction",
+      "environment": "env_py37",
+      "example_command": "mamba run -p ./env_py37 python scripts/rna_single_sequence_prediction.py --input examples/data/3owzA/3owzA.fasta --output results/single_prediction"
+    },
+    {
+      "name": "rna_msa_prediction.py",
+      "description": "MSA-enhanced RNA structure prediction",
+      "environment": "env_py37",
+      "example_command": "mamba run -p ./env_py37 python scripts/rna_msa_prediction.py --fasta examples/data/3owzA/3owzA.fasta --msa examples/data/3owzA/3owzA.a3m --output results/msa_prediction"
+    },
+    {
+      "name": "rna_batch_prediction.py",
+      "description": "Batch processing of multiple RNA sequences",
+      "environment": "env_py37",
+      "example_command": "mamba run -p ./env_py37 python scripts/rna_batch_prediction.py --input_dir examples/data --output results/batch_results --max_sequences 3"
+    },
+    {
+      "name": "rna_structure_analysis.py",
+      "description": "Analyze and validate predicted RNA structures",
+      "environment": "env",
+      "example_command": "mamba run -p ./env python scripts/rna_structure_analysis.py --input results/batch_results --output analysis/comprehensive_analysis --export_csv"
+    }
+  ],
+  "demo_data": [
+    {
+      "file": "3owzA/3owzA.fasta",
+      "description": "88-nucleotide RNA structure with MSA",
+      "used_by": ["predict_rna_structure", "predict_rna_structure_with_msa"]
+    },
+    {
+      "file": "3owzA/3owzA.a3m",
+      "description": "Multiple sequence alignment for 3owzA",
+      "used_by": ["predict_rna_structure_with_msa"]
+    },
+    {
+      "file": "3owzB/3owzB.fasta",
+      "description": "Alternative conformation of 3owzA",
+      "used_by": ["batch processing"]
+    },
+    {
+      "file": "4l81A/4l81A.fasta",
+      "description": "Large ribosomal RNA fragment",
+      "used_by": ["batch processing"]
+    },
+    {
+      "file": "5ddoA/5ddoA.fasta",
+      "description": "Structured RNA domain",
+      "used_by": ["structure analysis"]
+    },
+    {
+      "total_sequences": 16,
+      "description": "16 RNA structures total with corresponding FASTA and A3M files"
+    }
+  ],
+  "configs": [
+    {
+      "file": "default.json",
+      "description": "General purpose settings",
+      "parameters": {
+        "device": "cpu",
+        "relax_steps": 1000,
+        "log_level": "INFO",
+        "checkpoint_path": "./pretrained/rhofold_pretrained_params.pt"
+      }
+    },
+    {
+      "file": "single_sequence_prediction.json",
+      "description": "Single sequence specific settings",
+      "parameters": ["device", "relax_steps"]
+    },
+    {
+      "file": "msa_prediction.json",
+      "description": "MSA-enhanced prediction settings",
+      "parameters": ["device", "relax_steps", "msa_params"]
+    },
+    {
+      "file": "batch_prediction.json",
+      "description": "Batch processing configuration",
+      "parameters": ["max_sequences", "parallel_jobs", "device"]
+    },
+    {
+      "file": "structure_analysis.json",
+      "description": "Analysis and validation settings",
+      "parameters": ["export_formats", "quality_metrics"]
+    }
+  ],
+  "validation_results": {
+    "all_scripts_exist": true,
+    "all_configs_exist": true,
+    "example_data_available": true,
+    "mcp_server_loads": true,
+    "script_help_works": true,
+    "environments_exist": true
+  },
+  "installation_requirements": {
+    "disk_space": "~10GB",
+    "environments": {
+      "main": {
+        "path": "./env",
+        "python": "3.10+",
+        "purpose": "MCP server and analysis",
+        "size": "~1.2GB"
+      },
+      "legacy": {
+        "path": "./env_py37",
+        "python": "3.7.12",
+        "purpose": "RhoFold model inference",
+        "size": "~8.5GB"
+      }
+    },
+    "optional": {
+      "cuda": "5-10x speedup if available"
+    }
+  },
+  "performance_estimates": {
+    "single_sequence_cpu": "~5 minutes",
+    "single_sequence_gpu": "~30 seconds",
+    "batch_3_sequences_cpu": "~15 minutes",
+    "batch_3_sequences_gpu": "~2 minutes",
+    "structure_analysis": "~10 seconds",
+    "memory_usage": "~4-6 GB per sequence"
+  }
+}
